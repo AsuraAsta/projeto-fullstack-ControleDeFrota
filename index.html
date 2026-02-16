@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Frota - Farid</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h2><i class="fa-solid fa-car-side"></i> Registro de Saída - Veículos TI Farid</h2>
+            <p>Preencha os dados antes de sair.</p>
+        </header>
+
+        <form action="enviar.php" method="POST">
+            
+            <div class="input-group">
+                <label for="nome"><i class="fa-solid fa-user"></i> Nome do Condutor</label>
+                <input type="text" id="nome" name="nome" placeholder="Ex: João Pedro" required>
+            </div>
+
+            <div class="input-group">
+                <label for="data"><i class="fa-regular fa-calendar-days"></i> Data da Saída</label>
+                <input type="date" id="data" name="data" required>
+            </div>
+
+            <div class="input-group">
+                <label><i class="fa-solid fa-key"></i> Qual veículo?</label>
+                <div class="radio-container">
+                    <label class="radio-box">
+                        <input type="radio" name="carro" value="Nissan" required>
+                        <span>Nissan</span>
+                    </label>
+                    <label class="radio-box">
+                        <input type="radio" name="carro" value="Mobi">
+                        <span>Mobi</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="motivo"><i class="fa-solid fa-pen-to-square"></i> Motivo / Destino</label>
+                <input type="text" id="motivo" name="motivo" placeholder="Ex: Visita técnica OP" required>
+            </div>
+
+            <button type="submit">
+                CONFIRMAR SAÍDA <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+        </form>
+    </div>
+
+    
+</body>
+</html>

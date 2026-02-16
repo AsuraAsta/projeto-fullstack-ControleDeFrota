@@ -1,0 +1,175 @@
+/* Reset básico para garantir consistência */
+/* Reset básico para garantir consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Centraliza tudo na tela (Vertical e Horizontal) */
+body {
+    background-color: #eef2f7; /* Cor de fundo suave */
+    display: flex;
+    justify-content: center; /* Centraliza na horizontal */
+    align-items: center;     /* Centraliza na vertical */
+    min-height: 100vh;       /* Ocupa toda a altura da tela */
+    padding: 20px;           /* Margem para não colar nas bordas do celular */
+}
+
+/* A caixa branca do formulário */
+.container {
+    background-color: #ffffff;
+    width: 100%;            /* Ocupa 100% do espaço disponível */
+    max-width: 450px;       /* MAS trava em 450px (ideal para tablet/pc) */
+    padding: 30px;
+    border-radius: 15px;    /* Bordas arredondadas modernas */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra elegante */
+}
+
+/* Cabeçalho do formulário */
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h2 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+/* Estilo dos grupos de input */
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #34495e;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+label i {
+    margin-right: 5px;
+    color: #3498db; /* Azul destaque nos ícones */
+}
+
+/* Inputs de texto e data */
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    background-color: #fafafa;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+    border-color: #3498db;
+    background-color: #fff;
+}
+
+/* Estilização dos Botões de Seleção (Radio) */
+.radio-container {
+    display: flex;
+    gap: 15px; /* Espaço entre os botões */
+}
+
+.radio-box {
+    flex: 1; /* Faz os dois ocuparem o mesmo tamanho */
+    position: relative;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    padding: 12px;
+    background-color: #fafafa;
+}
+
+/* Esconde a bolinha padrão do rádio */
+.radio-box input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* O texto dentro do botão */
+.radio-box span {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Quando o mouse passa por cima */
+.radio-box:hover {
+    background-color: #e8f4fc;
+}
+
+/* Mágica: Quando o rádio está MARCADO, muda a cor da caixa inteira */
+.radio-box:has(input:checked) {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.radio-box:has(input:checked) span {
+    color: white;
+}
+
+/* Botão de Enviar */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #27ae60;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #219150;
+    transform: translateY(-2px); /* Efeito de "levantar" ao passar o mouse */
+}
+
+button i {
+    margin-left: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212; /* Fundo quase preto */
+        color: #e0e0e0;
+    }
+    .container {
+        background-color: #1e1e1e; /* Cinza escuro para a caixa */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+    h2, label, .radio-box span {
+        color: #ffffff; /* Texto branco */
+    }
+    input[type="text"], input[type="date"], .radio-box {
+        background-color: #2d2d2d;
+        border-color: #444;
+        color: #7faef5;
+    }
+    /* Ícones precisam ficar claros */
+    .icon, label i { 
+        color: #bb86fc; /* Um roxo/lilas bonito que destaca no escuro */
+    }
+}
